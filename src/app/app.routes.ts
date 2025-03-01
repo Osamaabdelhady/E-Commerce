@@ -17,9 +17,9 @@ export const routes: Routes = [
         {path:"home",loadComponent:()=>import('./Features/Pages/home/home.component').then((c)=>c.HomeComponent)},
         {path:"cart",loadComponent:()=>import('./Features/Pages/cart/cart.component').then((c)=>c.CartComponent)},
         {path:"allorders",loadComponent:()=>import('./Features/Pages/all-orders/all-orders.component').then((c)=>c.AllOrdersComponent)},
-        {path:"checkout/:id",loadComponent:()=>import('./Features/Pages/checkout/checkout.component').then((c)=>c.CheckoutComponent)},
+        {path:"checkout",loadComponent:()=>import('./Features/Pages/checkout/checkout.component').then((c)=>c.CheckoutComponent)},
         {path:"products",loadComponent:()=>import('./Features/Pages/products/products.component').then((c)=>c.ProductsComponent)},
-        {path:"productDetails/:id",loadComponent:()=>import('./Features/Pages/product-details/product-details.component').then((c)=>c.ProductDetailsComponent)},
+        {path:"productDetails",loadComponent:()=>import('./Features/Pages/product-details/product-details.component').then((c)=>c.ProductDetailsComponent)},
         {path:"brands",loadComponent:()=>import('./Features/Pages/brands/brands.component').then((c)=>c.BrandsComponent)},
         {path:"categories",loadComponent:()=>import('./Features/Pages/categories/categories.component').then((c)=>c.CategoriesComponent)}
     ]}
