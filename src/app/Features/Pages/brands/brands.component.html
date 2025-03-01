@@ -1,0 +1,13 @@
+<div class="md:w-[90%] mx-auto">
+    <h2 class="text-3xl my-3  font-medium">Shop Pupular Brands</h2>
+    <div class="flex flex-wrap my-4">
+        @for (item of BrandItem ; track $index) {
+        <div class="md:w-1/4 w-full p-3">
+            <div class="bg-green-300 h-full rounded-3xl p-1">
+                <img [src]="item.image" class="w-full h-[180px] rounded-3xl" alt="img">
+                <span class="text-black text-xl p-1 font-semibold flex justify-center">{{item.name}}</span>
+            </div>
+        </div>
+        }
+    </div>
+</div>

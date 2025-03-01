@@ -1,0 +1,35 @@
+<div class="md:w-[90%] mx-auto">
+    <p>{{date | date:'longDate'}}</p>
+    <div class="w-[50%] mx-auto my-4">
+        <input [(ngModel)]="searchValue" type="text" class="w-full rounded-md border"
+            placeholder="Enter product name...">
+    </div>
+    <div class="flex flex-wrap my-4">
+        @for (product of ProductList | filter : searchValue; track $index) {
+        <div class="md:w-1/4 w-full p-3">
+            <div class="bg-slate-100 h-full rounded p-3">
+                <div [routerLink]="['/productDetails',product._id]">
+                    <img [src]="product.imageCover" class="w-full h-[200px]" alt="img">
+                    <span class="text-green-400 text-xs font-medium">{{product.category.name}}</span>
+                    <p class="font-light my-3">{{product.title.split(" ").splice(0,3).join(" ") | onsale }}</p>
+                    <div class=" flex justify-between items-center">
+                        <div>
+                            <i class="fa fa-star text-yellow-300"></i>
+                            <span>{{product.ratingsQuantity}} </span>
+                            <!-- <span class="text-slate-500"> {{product.quantity}}</span> -->
+                        </div>
+
+                        <div>
+                            <span>{{product.price | currency:'EUR'}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button (click)="addProduct(product._id)" class="bg-green-600 text-white w-[90%] mx-auto m-2 py-2 rounded">+ Add To Cart</button>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+
+</div>
